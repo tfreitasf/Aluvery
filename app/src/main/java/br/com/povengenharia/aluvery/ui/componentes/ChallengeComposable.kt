@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -69,7 +70,7 @@ fun ChallengeComposableHorizontal() {
                     .width(imageSize)
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_background),
+                    painter = painterResource(id = R.drawable.placeholder),
                     contentDescription = stringResource(
                         R.string.product_item_cd_image_description
                     ),
@@ -87,7 +88,8 @@ fun ChallengeComposableHorizontal() {
                                     )
                                 )
                             ), CircleShape
-                        )
+                        ),
+                    contentScale = ContentScale.Crop
                 )
             }
             Spacer(Modifier.width(imageSize / 2))
@@ -136,7 +138,7 @@ fun ChallengeComposableVertical(description: String = "") {
                     .fillMaxWidth()
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_background),
+                    painter = painterResource(id = R.drawable.placeholder),
                     contentDescription = stringResource(
                         R.string.product_item_cd_image_description
                     ),
@@ -144,7 +146,8 @@ fun ChallengeComposableVertical(description: String = "") {
                         .size(imageSize)
                         .offset(y = imageSize / 2)
                         .clip(shape = CircleShape)
-                        .align(Alignment.BottomCenter)
+                        .align(Alignment.BottomCenter),
+                    contentScale = ContentScale.Crop
                 )
             }
             Spacer(modifier = Modifier.height(imageSize / 2))
