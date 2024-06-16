@@ -1,0 +1,24 @@
+# IntelliJ/Android Studio specific files and directories
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/.gitignore
+
+# System files
+.DS_Store
+
+# Build directories
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Local configuration files
+local.properties
+/.idea/.gitignore
