@@ -1,7 +1,6 @@
-package io.github.tfreitasf.aluvery.sampledata
+package io.github.tfreitasf.aluvery.model
 
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
-import io.github.tfreitasf.aluvery.model.Product
 import java.math.BigDecimal
 
 val sampleCandies = listOf(

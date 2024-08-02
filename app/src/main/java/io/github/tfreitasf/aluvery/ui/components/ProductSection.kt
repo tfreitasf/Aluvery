@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import io.github.tfreitasf.aluvery.model.Product
-import io.github.tfreitasf.aluvery.sampledata.sampleProducts
+import io.github.tfreitasf.aluvery.model.sampleProducts
 import io.github.tfreitasf.aluvery.ui.theme.AluveryTheme
 
 @Composable

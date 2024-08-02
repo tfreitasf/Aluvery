@@ -1,19 +1,21 @@
-package io.github.tfreitasf.aluvery
+package io.github.tfreitasf.aluvery.ui.screens.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import io.github.tfreitasf.aluvery.sampledata.sampleSections
-import io.github.tfreitasf.aluvery.ui.screens.HomeScreen
+import io.github.tfreitasf.aluvery.ui.screens.home.viewmodel.HomeViewModel
 import io.github.tfreitasf.aluvery.ui.theme.AluveryTheme
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : ComponentActivity() {
+class HomeActivity : ComponentActivity() {
+    private val viewModel: HomeViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             AluveryTheme {
                 HomeScreen(
-                    sampleSections
+                    viewModel
                 )
             }
         }
