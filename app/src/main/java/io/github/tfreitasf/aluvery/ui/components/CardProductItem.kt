@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import io.github.tfreitasf.aluvery.R
 import io.github.tfreitasf.aluvery.extensions.toBrazilianCurrency
-import io.github.tfreitasf.aluvery.model.Product
+import io.github.tfreitasf.aluvery.database.model.Product
 import io.github.tfreitasf.aluvery.ui.theme.AluveryTheme
 import java.math.BigDecimal
 

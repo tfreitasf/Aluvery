@@ -1,4 +1,4 @@
-package io.github.tfreitasf.aluvery.model
+package io.github.tfreitasf.aluvery.database.model
 
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import java.math.BigDecimal
