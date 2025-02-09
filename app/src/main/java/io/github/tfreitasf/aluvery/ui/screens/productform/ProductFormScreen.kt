@@ -98,8 +98,8 @@ fun ProductFormScreen(viewModel: ProductFormViewModel, onSaveClick: () -> Unit =
             value = uiState.productPrice,
             maxLines = 1,
             onValueChange = {
-                val formattedPrice = viewModel.formatPrice(it)
-                viewModel.updateProductPrice(formattedPrice)
+                val formattedInput = viewModel.formatPrice(it)
+                viewModel.updateProductPrice(formattedInput)
             },
             label = {
                 Text(text = "Preço")

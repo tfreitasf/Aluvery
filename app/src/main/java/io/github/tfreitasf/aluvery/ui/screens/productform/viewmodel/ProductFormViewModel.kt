@@ -40,10 +40,14 @@ class ProductFormViewModel : ViewModel() {
 
     fun formatPrice(price: String): String {
         return try {
-            val bigDecimalPrice = BigDecimal(price)
-            priceFormatter.format(bigDecimalPrice)
+            // Substitui a vírgula por ponto apenas para formatação interna
+            val normalizedPrice = price.replace(',', '.')
+            val bigDecimalPrice = BigDecimal(normalizedPrice)
+            // Retorna o valor formatado com vírgula como separador
+            priceFormatter.format(bigDecimalPrice).replace('.', ',')
         } catch (e: NumberFormatException) {
-            ""
+            // Retorna a entrada original se ocorrer um erro de formatação
+            price
         }
     }
 

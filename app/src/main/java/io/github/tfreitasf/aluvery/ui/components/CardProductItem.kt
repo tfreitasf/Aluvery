@@ -35,14 +35,15 @@ import java.math.BigDecimal
 fun CardProductItem(
     product: Product,
     modifier: Modifier = Modifier,
-    elevation: Dp = 4.dp
+    elevation: Dp = 4.dp,
+    isExpanded: Boolean = false
 ) {
-    var isExpanded by remember { mutableStateOf(false) }
+    var expanded by remember { mutableStateOf(isExpanded) }
     Card(
         modifier
             .fillMaxWidth()
             .heightIn(150.dp)
-            .clickable { isExpanded = !isExpanded },
+            .clickable { expanded = !expanded },
         elevation = CardDefaults.cardElevation(elevation)
     ) {
         Column {
@@ -64,13 +65,15 @@ fun CardProductItem(
                 Text(text = product.name)
                 Text(text = product.price.toBrazilianCurrency())
             }
-            product.description?.let {
-                Text(
-                    text = it,
-                    maxLines = if (isExpanded) Int.MAX_VALUE else 2,
-                    overflow = if (isExpanded) TextOverflow.Visible else TextOverflow.Ellipsis,
-                    modifier = Modifier.padding(16.dp)
-                )
+            if(expanded){
+                product.description?.let {
+                    Text(
+                        text = it,
+                        maxLines = if (expanded) Int.MAX_VALUE else 2,
+                        overflow = if (expanded) TextOverflow.Visible else TextOverflow.Ellipsis,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
             }
         }
     }
